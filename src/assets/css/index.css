@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #111827;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@layer components {
+  .card-image-base {
+    @apply w-full h-full absolute inset-0;
+  }
+  
+  .card-image-form {
+    @apply card-image-base z-[2] bg-gray-900;
+  }
+  
+  .card-image-content {
+    @apply card-image-base z-[3] mix-blend-multiply filter grayscale-70 transition-all duration-700 ease-in-out hover:grayscale-0;
+    mask-image: url('@img/mancha-blanca.png');
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url('@img/mancha-blanca.png');
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+
+  .color-fun {
+    @apply bg-gradient-to-r 
+         from-purple-300 via-lime-200 to-purple-300
+         bg-[length:300%_100%];
+  }
+
+  .commun-button {
+    @apply color-fun
+           px-6 py-1 font-bold text-2xl ;
+  }
+
+  .commun-button:active {
+    @apply scale-95
+  }
+
+  .button-animated {
+    @apply commun-button 
+         text-black
+           rounded-full
+           transition-all duration-500 ease-in-out
+           bg-[length:200%_100%] bg-no-repeat
+           bg-[position:0%_100%]
+           hover:bg-[position:100%_100%];
+    box-shadow: 1px 2px 5px rgb(0, 0, 0);
+  }
+
+  .button-underline {
+    @apply commun-button
+           relative transition-all duration-500 ease-in-out
+           text-white
+           bg-[length:200%_4px] bg-no-repeat
+           bg-[position:0%_100%]
+           hover:tracking-widest
+           hover:bg-[position:100%_100%];
+  }
+
+  .text-gradient-name {
+    @apply color-fun
+           inline-block text-transparent bg-clip-text
+           italic
+           animate-text-gradient;
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+@keyframes text-gradient {
+  0% { background-position: 0% center; }
+  50% { background-position: -150% center; }
+  100% { background-position: -300% center; }
+}
+
+@layer utilities {
+  .animate-text-gradient {
+    animation: text-gradient 6s linear infinite;
+  }
+}
