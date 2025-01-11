@@ -9,6 +9,10 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#root {
+  @apply min-h-screen p-8 flex flex-col gap-10 max-w-screen-2xl mx-auto
+}
+
 @layer components {
   .card-image-base {
     @apply w-full h-full absolute inset-0;
@@ -19,7 +23,7 @@ body {
   }
   
   .card-image-content {
-    @apply card-image-base z-[3] mix-blend-multiply filter grayscale-70 transition-all duration-700 ease-in-out hover:grayscale-0;
+    @apply card-image-base z-[3] mix-blend-multiply filter grayscale-70 transition-all duration-300 ease-in-out hover:grayscale-0;
     mask-image: url('@img/mancha-blanca.png');
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
@@ -34,6 +38,12 @@ body {
     @apply bg-gradient-to-r 
          from-purple-300 via-lime-200 to-purple-300
          bg-[length:300%_100%];
+  }
+
+  .color-fun-inverse {
+    @apply bg-gradient-to-r 
+           from-lime-200 via-purple-300 to-purple-300 
+           bg-[length:200%_200%];
   }
 
   .commun-button {
@@ -84,5 +94,13 @@ body {
 @layer utilities {
   .animate-text-gradient {
     animation: text-gradient 6s linear infinite;
+  }
+
+  .animation-blink {
+    animation: blink .5s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
   }
 }
