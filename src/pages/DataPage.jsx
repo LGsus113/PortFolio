@@ -50,7 +50,7 @@ function DataPage() {
         <Nav menuOptions={menuOptions} />
       </header>
       <main className="w-full h-auto flex flex-col gap-5">
-        <div className="w-7/10 h-auto p-5 flex justify-between gap-10 rounded-lg color-fun-inverse shadow-2xl">
+        <div className="w-full h-auto p-5 flex justify-between gap-24 rounded-lg color-fun-inverse shadow-2xl">
           <InformationUser />
           <CardPresentation images={images} />
         </div>

@@ -91,6 +91,10 @@ body {
   100% { background-position: -300% center; }
 }
 
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 @layer utilities {
   .animate-text-gradient {
     animation: text-gradient 6s linear infinite;
@@ -98,9 +102,5 @@ body {
 
   .animation-blink {
     animation: blink .5s step-end infinite;
-  }
-
-  @keyframes blink {
-    50% { opacity: 0; }
   }
 }
