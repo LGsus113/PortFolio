@@ -6,29 +6,34 @@ body {
   background-color: #111827;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#root {
-  @apply min-h-screen p-8 flex flex-col gap-10 max-w-screen-2xl mx-auto
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @layer components {
+  .nav {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
   .card-image-base {
     @apply w-full h-full absolute inset-0;
   }
-  
+
   .card-image-form {
     @apply card-image-base z-[2] bg-gray-900;
   }
-  
+
   .card-image-content {
-    @apply card-image-base z-[3] mix-blend-multiply filter grayscale-70 transition-all duration-300 ease-in-out hover:grayscale-0;
-    mask-image: url('@img/mancha-blanca.png');
+    @apply card-image-base z-[3] mix-blend-multiply filter;
+    mask-image: url("@img/mancha-blanca.png");
     mask-size: 100% 100%;
     mask-repeat: no-repeat;
     mask-position: center;
-    -webkit-mask-image: url('@img/mancha-blanca.png');
+    -webkit-mask-image: url("@img/mancha-blanca.png");
     -webkit-mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -48,11 +53,11 @@ body {
 
   .commun-button {
     @apply color-fun
-           px-6 py-1 font-bold text-2xl ;
+           px-6 py-1 font-bold text-2xl;
   }
 
   .commun-button:active {
-    @apply scale-95
+    @apply scale-95;
   }
 
   .button-animated {
@@ -81,18 +86,35 @@ body {
            inline-block text-transparent bg-clip-text
            italic
            animate-text-gradient;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
   }
 }
 
 @keyframes text-gradient {
-  0% { background-position: 0% center; }
-  50% { background-position: -150% center; }
-  100% { background-position: -300% center; }
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: -150% center;
+  }
+  100% {
+    background-position: -300% center;
+  }
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes Run {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--icon-size) * -1);
+  }
 }
 
 @layer utilities {
@@ -101,6 +123,38 @@ body {
   }
 
   .animation-blink {
-    animation: blink .5s step-end infinite;
+    animation: blink 0.5s step-end infinite;
+  }
+
+  .animation-run {
+    animation: Run 10s linear infinite;
+    animation-delay: calc((10s / var(--cantidad)) * var(--posicion));
+  }
+
+  .animation-run-stopped {
+    animation-play-state: paused;
+  }
+
+  .shadow-fun {
+    position: relative;
+  }
+
+  .shadow-fun::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #c084fc, #9dff60, #c084fc);
+    background-size: 300% 100%;
+    filter: blur(43px);
+    z-index: -1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-Size {
+    transform: scale(var(--card-size));
+    opacity: var(--card-size);
   }
 }

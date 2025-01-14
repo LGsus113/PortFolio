@@ -45,8 +45,4 @@ TitleName.propTypes = {
   ]),
 };
 
-TitleName.defaultProps = {
-  size: "6xl",
-};
-
 export default TitleName;

@@ -33,8 +33,4 @@ ButtonUse.propTypes = {
   onClick: PropTypes.func,
 };
 
-ButtonUse.defaultProps = {
-  onClick: () => {},
-};
-
 export default ButtonUse;

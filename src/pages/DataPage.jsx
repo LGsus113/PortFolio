@@ -1,4 +1,6 @@
 import Nav from "@components/Nav.jsx";
+import useScrollFraction from "@utils/Calculate-Scroll.js";
+
 import CardPresentation from "@components/Card-Presentation.jsx";
 import InformationUser from "@components/Information-User.jsx";
 
@@ -44,18 +46,29 @@ function DataPage() {
     },
   };
 
+  const scrollFraction = useScrollFraction();
+  const cardSize = Math.max(1 - scrollFraction, 0.3);
+
   return (
     <>
-      <header className="w-full h-auto mb-5">
+      <header className="w-full h-auto top-0 z-50 fixed flex justify-center items-center bg-gray-900">
         <Nav menuOptions={menuOptions} />
       </header>
-      <main className="w-full h-auto flex flex-col gap-5">
-        <div className="w-full h-auto p-5 flex justify-between gap-24 rounded-lg color-fun-inverse shadow-2xl">
-          <InformationUser />
-          <CardPresentation images={images} />
+      <main className="w-full h-auto flex flex-col justify-center items-center gap-5">
+        <div className="w-[1536px] h-[100vh] top-0 fixed flex justify-center items-center">
+          <div
+            className="w-full h-auto p-5 flex justify-between gap-24 rounded-lg color-fun shadow-fun card-Size"
+            style={{ "--card-size": cardSize }}
+          >
+            <InformationUser />
+            <CardPresentation images={images} />
+          </div>
         </div>
       </main>
-      <footer>Data Page</footer>
+      <footer className="w-full h-auto mt-[100vh] flex flex-col justify-center items-center">
+        hola <br/>
+        hola <br/>
+      </footer>
     </>
   );
 }

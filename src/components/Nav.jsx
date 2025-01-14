@@ -6,7 +6,7 @@ function Nav({ menuOptions }) {
   const { leftSection, centerSection, rightSection } = menuOptions;
 
   return (
-    <nav className="w-full sticky top-0 z-50 flex items-center justify-between">
+    <nav className="w-[1536px] h-auto flex p-8 items-center justify-between">
       <div className="flex-1 min-w-[200px] flex items-center">
         <TitleName nameUser={leftSection.title} size={leftSection.size} />
       </div>
