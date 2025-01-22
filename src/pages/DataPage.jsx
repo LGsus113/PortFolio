@@ -3,10 +3,7 @@ import useScrollFraction from "@utils/Calculate-Scroll.js";
 
 import CardPresentation from "@components/Card-Presentation.jsx";
 import InformationUser from "@components/Information-User.jsx";
-<<<<<<< HEAD
 import Study from "@components/Study-Info.jsx";
-=======
->>>>>>> 7e6c6e7d2b74e016c443fdf0b953c73813079136
 
 import mancha from "@img/mancha-blanca.png";
 import LGsus from "@img/file.jpg";
