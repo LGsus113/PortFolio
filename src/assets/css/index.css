@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #111827;
+  background-color: #111010;
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -24,7 +24,7 @@ body {
   }
 
   .card-image-form {
-    @apply card-image-base z-[2] bg-gray-900;
+    @apply card-image-base z-[2] bg-ligthDark;
   }
 
   .card-image-content {
@@ -87,6 +87,10 @@ body {
            italic
            animate-text-gradient;
     font-family: "Courier New", Courier, monospace;
+  }
+
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-md rounded-lg border border-white;
   }
 }
 

@@ -41,11 +41,11 @@ function TyperEfect({ frases, speed = 100, delay = 500, weight = "" }) {
 
   return (
     <>
-      <span className={`text-gray-900 font-mono tracking-wide ${weight}`}>
+      <span className={`text-white font-mono tracking-wide ${weight}`}>
         {currentText}
       </span>
       <span
-        className={`inline-block text-purple-800 ${
+        className={`inline-block text-purple-900 ${
           cursorVisible ? "animation-blink" : ""
         }`}
       >

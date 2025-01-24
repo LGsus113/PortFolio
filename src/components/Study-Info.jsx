@@ -1,5 +1,9 @@
 function Study() {
-  return <h1 className="text-black text-3xl">Hola</h1>;
+  return (
+    <div className="w-full h-[50vh] p-2 rounded-lg border border-white color-fun shadow-inner">
+      <h1>hola</h1>
+    </div>
+  );
 }
 
 export default Study;

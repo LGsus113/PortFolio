@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function CardPresentation({ images }) {
   return (
-    <div className="relative w-[450px] h-[450px] bg-gray-800 rounded-lg overflow-hidden">
+    <div className="relative w-[450px] h-[450px] bg-ligthDark rounded-lg overflow-hidden">
       <img
         src={images.form}
         alt="form"
